@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     /**
      * Pull in the package.json file so we can read its metadata.
      */
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: grunt.file.readJSON('bower.json'),
     
     /**
      * Bower: https://github.com/yatskevich/grunt-bower-task
@@ -202,9 +202,9 @@ module.exports = function(grunt) {
       ' *                   $$\n' +
       ' *                   ""\n' +
       ' *\n' +
-      ' *  <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+      ' *  <%= pkg.name %> - v<%= pkg.version %>\n' +
       ' *  <%= pkg.homepage %>' +
-      ' *  A public domain work of the <%= pkg.author.name %>\n' +
+      ' *  A public domain work of the Consumer Financial Protection Bureau\n' +
       ' */',
 
     usebanner: {
