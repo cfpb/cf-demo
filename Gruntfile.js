@@ -350,25 +350,6 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Jasmine: https://github.com/gruntjs/grunt-contrib-jasmine
-     * 
-     * Run jasmine specs headlessly through PhantomJS.
-     * jQuery and Jasmine jQuery is included for your pleasure: https://github.com/velesin/jasmine-jquery
-     */
-    jasmine: {
-      src: '<%= uglify.bodyScripts.src %>',
-      options: {
-        specs: 'specs/js/*.js',
-        vendor: [
-          'specs/js/vendor/*.js'
-        ],
-        helpers: [
-          'specs/js/helpers/*.js'
-        ]
-      }
-    },
-
-    /**
      * grunt-cfpb-internal: https://github.com/cfpb/grunt-cfpb-internal
      * 
      * Some internal CFPB tasks.
@@ -391,7 +372,7 @@ module.exports = function(grunt) {
      */
     watch: {
       gruntfile: {
-        files: ['Gruntfile.js', 'src/static/css/*.less', '<%= uglify.bodyScripts.src %>', '<%= jasmine.options.specs %>'],
+        files: ['Gruntfile.js', 'src/static/css/*.less', '<%= uglify.bodyScripts.src %>'],
         tasks: ['default']
       }
     }
@@ -407,21 +388,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  // grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  // grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  // grunt.loadNpmTasks('grunt-docco');
-  // grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-release');
-  // grunt.loadNpmTasks('grunt-remove-logging');
-  // grunt.loadNpmTasks('grunt-shell');
-  // grunt.loadNpmTasks('grunt-saucelabs');
   grunt.loadNpmTasks('grunt-string-replace');
   grunt.loadNpmTasks('grunt-gh-pages');
 
@@ -429,9 +402,9 @@ module.exports = function(grunt) {
    * Create custom task aliases and combinations
    */
   grunt.registerTask('vendor', ['clean:bowerDir', 'bower:install', 'concat:cf-less']);
-  grunt.registerTask('default', ['less', 'string-replace:vendor', 'autoprefixer', 'concat:bodyScripts']);
   grunt.registerTask('compile', ['less', 'string-replace:vendor', 'autoprefixer', 'concat:bodyScripts']);
+  grunt.registerTask('default', ['compile']);
   grunt.registerTask('dist', ['cssmin', 'uglify', 'usebanner', 'clean:dist', 'copy:dist', 'compress:dist']);
-  //grunt.registerTask('test', ['jshint', 'jasmine']);
+  grunt.registerTask('test', ['jshint']);
 
 };
