@@ -1,38 +1,4 @@
 {
-  "name": "capital-framework",
-  "version": "0.4.0",
-  "description": "Master repository for building the complete Capital Framework.",
-  "keywords": [
-    "capital-framework",
-    "capital",
-    "framework",
-    "grunt",
-    "build"
-  ],
-  "author": {
-    "name": "Consumer Financial Protection Bureau",
-    "url": "http://cfpb.github.io/"
-  },
-  "homepage": "https://github.com/cfpb/capital-framework",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cfpb/capital-framework.git"
-  },
-  "licenses": [
-    {
-      "type": "Public Domain",
-      "url": "https://github.com/cfpb/capital-framework/blob/master/TERMS.md"
-    }
-  ],
-  "bugs": {
-    "url": "https://github.com/cfpb/capital-framework/issues"
-  },
-  "engines": {
-    "node": ">=0.8.0"
-  },
-  "scripts": {
-    "test": "grunt jasmine"
-  },
   "devDependencies": {
     "grunt": "latest",
     "grunt-autoprefixer": "latest",
