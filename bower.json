@@ -36,9 +36,6 @@
     "cf-typography": "git://github.com/cfpb/cf-typography.git"
   },
   "exportsOverride": {
-    "cf-grid": {
-      "less": "src/ghost.less"
-    },
     "cf-*": {
       "css": "src/**/*.css",
       "less": "src/**/*.less",
