@@ -1,3 +1,5 @@
+# :warning: THIS REPO WILL SOON BE DEPRECATED :warning:
+
 # cf-demo
 
 cf-demo is the recommended workflow for using Capital Framework components.
