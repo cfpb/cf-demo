@@ -1,4 +1,4 @@
-# :warning: THIS REPO WILL SOON BE DEPRECATED :warning:
+# :warning: THIS REPO IS DEPRECATED (4/24/2015) :warning:
 
 # cf-demo
 
